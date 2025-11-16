@@ -5,7 +5,7 @@
 `ws_diff_drive` 워크스페이스는 차동 구동 로봇의 실시간 SLAM(동시적 위치 추정 및 지도 작성)을 위한 ROS2 프로젝트입니다. Python으로 작성된 노드와 표준 ROS2 패키지를 조합하여, LiDAR 센서 데이터와 휠 오도메트리 데이터를 융합하는 강건한(robust) 시스템을 구축합니다.
 
 - **핵심 기능**: LiDAR 스캔 데이터와 로봇 자체의 주행 기록(오도메트리)을 `slam_toolbox`를 통해 결합하여, 환경 지도를 생성하고 그 안에서 로봇의 위치를 추정합니다.
-- **기술 스택**: ROS2(Python), `sllidar_ros2`, `slam_toolbox
+- **기술 스택**: ROS2(Python), `sllidar_ros2`, `slam_toolbox`
 
 ## 2. 시스템 아키텍처 및 데이터 흐름
 
@@ -16,10 +16,10 @@
     - `1`번의 두 토픽을 **구독(Subscribe)**합니다.
     - 두 바퀴의 속도를 융합하여 로봇의 선속도(`v`)와 각속도(`w`)를 계산합니다.
     - 이를 기반으로 로봇의 위치와 자세(`x`, `y`, `yaw`)를 계산(적분)합니다.
-    - 계산된 위치/자세/속도 정보를 `nav_msgs/msg/Odometry` 메시지 형태로 `/odom` 토픽에 **발행(Publish)**합니다.
+    - 계산된 위치/자세/속도 정보를 `nav_msgs/msg/Odometry` 메시지 형태로 `/odom` **토픽에 발행(Publish)**합니다.
     - 동일한 위치/자세 정보를 `odom` → `base_link` 좌표 변환(TF)으로 **브로드캐스트(Broadcast)**합니다.
 3. **`sllidar_node`**:
-    - LiDAR 센서로부터 2D 스캔 데이터를 수신합니다.
+    - LiDAR 센서로부터 2D 스캔 데이터a를 수신합니다.
     - `sensor_msgs/msg/LaserScan` 메시지 형태로 `/scan` 토픽에 **발행**합니다.
 4. **`static_transform_publisher`**:
     - 로봇의 기준 좌표계(`base_link`)와 LiDAR 센서의 좌표계(`laser`) 사이의 고정된 관계를 TF로 **브로드캐스트**합니다.
