@@ -1,0 +1,200 @@
+[0.236s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.237s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=6, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffff80bb9f60>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff80bb98d0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff80bb98d0>>, mixin_verb=('build',))
+[0.601s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.601s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.602s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.602s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.602s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.602s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.602s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/marlboro/ws_diff_drive'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.626s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.626s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.628s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.628s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.628s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.628s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.628s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.629s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.629s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.629s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.629s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.629s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.629s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.629s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.629s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.629s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.630s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.630s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.630s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.630s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.630s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.630s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.630s] Level 1:colcon.colcon_core.package_identification:_identify(src/diff_drive_fusion) by extensions ['ignore', 'ignore_ament_install']
+[0.630s] Level 1:colcon.colcon_core.package_identification:_identify(src/diff_drive_fusion) by extension 'ignore'
+[0.631s] Level 1:colcon.colcon_core.package_identification:_identify(src/diff_drive_fusion) by extension 'ignore_ament_install'
+[0.631s] Level 1:colcon.colcon_core.package_identification:_identify(src/diff_drive_fusion) by extensions ['colcon_pkg']
+[0.631s] Level 1:colcon.colcon_core.package_identification:_identify(src/diff_drive_fusion) by extension 'colcon_pkg'
+[0.631s] Level 1:colcon.colcon_core.package_identification:_identify(src/diff_drive_fusion) by extensions ['colcon_meta']
+[0.631s] Level 1:colcon.colcon_core.package_identification:_identify(src/diff_drive_fusion) by extension 'colcon_meta'
+[0.631s] Level 1:colcon.colcon_core.package_identification:_identify(src/diff_drive_fusion) by extensions ['ros']
+[0.631s] Level 1:colcon.colcon_core.package_identification:_identify(src/diff_drive_fusion) by extension 'ros'
+[0.637s] DEBUG:colcon.colcon_core.package_identification:Package 'src/diff_drive_fusion' with type 'ros.ament_python' and name 'diff_drive_fusion'
+[0.637s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ignore'
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ignore_ament_install'
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['colcon_pkg']
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'colcon_pkg'
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['colcon_meta']
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'colcon_meta'
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['ros']
+[0.638s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ros'
+[0.640s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sllidar_ros2' with type 'ros.ament_cmake' and name 'sllidar_ros2'
+[0.640s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.640s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.640s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.640s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.640s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.715s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.715s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.717s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/marlboro/ws_diff_drive/install/sllidar_ros2' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.717s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/marlboro/ws_diff_drive/install/diff_drive_fusion' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.717s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/marlboro/ws_diff_drive/install/sllidar_ros2' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.719s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/marlboro/ws_diff_drive/install
+[0.721s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 294 installed packages in /opt/ros/humble
+[0.724s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.805s] Level 5:colcon.colcon_core.verb:set package 'diff_drive_fusion' build argument 'cmake_args' from command line to 'None'
+[0.805s] Level 5:colcon.colcon_core.verb:set package 'diff_drive_fusion' build argument 'cmake_target' from command line to 'None'
+[0.805s] Level 5:colcon.colcon_core.verb:set package 'diff_drive_fusion' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.805s] Level 5:colcon.colcon_core.verb:set package 'diff_drive_fusion' build argument 'cmake_clean_cache' from command line to 'False'
+[0.805s] Level 5:colcon.colcon_core.verb:set package 'diff_drive_fusion' build argument 'cmake_clean_first' from command line to 'False'
+[0.805s] Level 5:colcon.colcon_core.verb:set package 'diff_drive_fusion' build argument 'cmake_force_configure' from command line to 'False'
+[0.806s] Level 5:colcon.colcon_core.verb:set package 'diff_drive_fusion' build argument 'ament_cmake_args' from command line to 'None'
+[0.806s] Level 5:colcon.colcon_core.verb:set package 'diff_drive_fusion' build argument 'catkin_cmake_args' from command line to 'None'
+[0.806s] Level 5:colcon.colcon_core.verb:set package 'diff_drive_fusion' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.806s] DEBUG:colcon.colcon_core.verb:Building package 'diff_drive_fusion' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/marlboro/ws_diff_drive/build/diff_drive_fusion', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/marlboro/ws_diff_drive/install/diff_drive_fusion', 'merge_install': False, 'path': '/home/marlboro/ws_diff_drive/src/diff_drive_fusion', 'symlink_install': True, 'test_result_base': None}
+[0.806s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_args' from command line to 'None'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_target' from command line to 'None'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_clean_cache' from command line to 'False'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_clean_first' from command line to 'False'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_force_configure' from command line to 'False'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'ament_cmake_args' from command line to 'None'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'catkin_cmake_args' from command line to 'None'
+[0.807s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.807s] DEBUG:colcon.colcon_core.verb:Building package 'sllidar_ros2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/marlboro/ws_diff_drive/build/sllidar_ros2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/marlboro/ws_diff_drive/install/sllidar_ros2', 'merge_install': False, 'path': '/home/marlboro/ws_diff_drive/src/sllidar_ros2', 'symlink_install': True, 'test_result_base': None}
+[0.807s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.810s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.810s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/marlboro/ws_diff_drive/src/diff_drive_fusion' with build type 'ament_python'
+[0.811s] Level 1:colcon.colcon_core.shell:create_environment_hook('diff_drive_fusion', 'ament_prefix_path')
+[0.815s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.815s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/hook/ament_prefix_path.ps1'
+[0.817s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/hook/ament_prefix_path.dsv'
+[0.818s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/hook/ament_prefix_path.sh'
+[0.820s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.820s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.826s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/marlboro/ws_diff_drive/src/sllidar_ros2' with build type 'ament_cmake'
+[0.827s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/marlboro/ws_diff_drive/src/sllidar_ros2'
+[0.827s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.828s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.389s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/marlboro/ws_diff_drive/src/diff_drive_fusion'
+[1.390s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.390s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.404s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/marlboro/ws_diff_drive/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marlboro/ws_diff_drive/install/diff_drive_fusion:/opt/ros/humble /usr/bin/cmake /home/marlboro/ws_diff_drive/src/sllidar_ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/marlboro/ws_diff_drive/install/sllidar_ros2
+[2.191s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/marlboro/ws_diff_drive/build/diff_drive_fusion': PYTHONPATH=/home/marlboro/ws_diff_drive/build/diff_drive_fusion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marlboro/ws_diff_drive/install/diff_drive_fusion/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/marlboro/ws_diff_drive/build/diff_drive_fusion/build --no-deps symlink_data
+[3.195s] Level 1:colcon.colcon_core.shell:create_environment_hook('diff_drive_fusion', 'pythonpath_develop')
+[3.197s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marlboro/ws_diff_drive/build/diff_drive_fusion/share/diff_drive_fusion/hook/pythonpath_develop.ps1'
+[3.198s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/marlboro/ws_diff_drive/build/diff_drive_fusion' returned '0': PYTHONPATH=/home/marlboro/ws_diff_drive/build/diff_drive_fusion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marlboro/ws_diff_drive/install/diff_drive_fusion/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/marlboro/ws_diff_drive/build/diff_drive_fusion/build --no-deps symlink_data
+[3.199s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marlboro/ws_diff_drive/build/diff_drive_fusion/share/diff_drive_fusion/hook/pythonpath_develop.dsv'
+[3.201s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marlboro/ws_diff_drive/build/diff_drive_fusion/share/diff_drive_fusion/hook/pythonpath_develop.sh'
+[3.211s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/diff_drive_fusion' for CMake module files
+[3.213s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/diff_drive_fusion' for CMake config files
+[3.216s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/lib'
+[3.216s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/bin'
+[3.217s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/lib/pkgconfig/diff_drive_fusion.pc'
+[3.218s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/lib/python3.10/site-packages'
+[3.218s] Level 1:colcon.colcon_core.shell:create_environment_hook('diff_drive_fusion', 'pythonpath')
+[3.219s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/hook/pythonpath.ps1'
+[3.221s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/hook/pythonpath.dsv'
+[3.222s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/hook/pythonpath.sh'
+[3.224s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/bin'
+[3.224s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(diff_drive_fusion)
+[3.226s] INFO:colcon.colcon_core.shell:Creating package script '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/package.ps1'
+[3.229s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/package.dsv'
+[3.231s] INFO:colcon.colcon_core.shell:Creating package script '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/package.sh'
+[3.233s] INFO:colcon.colcon_core.shell:Creating package script '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/package.bash'
+[3.236s] INFO:colcon.colcon_core.shell:Creating package script '/home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/package.zsh'
+[3.238s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/colcon-core/packages/diff_drive_fusion)
+[3.946s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/marlboro/ws_diff_drive/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marlboro/ws_diff_drive/install/diff_drive_fusion:/opt/ros/humble /usr/bin/cmake /home/marlboro/ws_diff_drive/src/sllidar_ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/marlboro/ws_diff_drive/install/sllidar_ros2
+[3.951s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/marlboro/ws_diff_drive/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marlboro/ws_diff_drive/install/diff_drive_fusion:/opt/ros/humble /usr/bin/cmake --build /home/marlboro/ws_diff_drive/build/sllidar_ros2 -- -j6 -l6
+[24.584s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/marlboro/ws_diff_drive/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marlboro/ws_diff_drive/install/diff_drive_fusion:/opt/ros/humble /usr/bin/cmake --build /home/marlboro/ws_diff_drive/build/sllidar_ros2 -- -j6 -l6
+[24.611s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/marlboro/ws_diff_drive/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marlboro/ws_diff_drive/install/diff_drive_fusion:/opt/ros/humble /usr/bin/cmake --install /home/marlboro/ws_diff_drive/build/sllidar_ros2
+[25.525s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sllidar_ros2)
+[25.526s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2' for CMake module files
+[25.529s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2' for CMake config files
+[25.530s] Level 1:colcon.colcon_core.shell:create_environment_hook('sllidar_ros2', 'cmake_prefix_path')
+[25.531s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.ps1'
+[25.534s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/marlboro/ws_diff_drive/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marlboro/ws_diff_drive/install/diff_drive_fusion:/opt/ros/humble /usr/bin/cmake --install /home/marlboro/ws_diff_drive/build/sllidar_ros2
+[25.535s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.dsv'
+[25.537s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.sh'
+[25.539s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2/lib'
+[25.539s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2/bin'
+[25.539s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2/lib/pkgconfig/sllidar_ros2.pc'
+[25.540s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2/lib/python3.10/site-packages'
+[25.541s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2/bin'
+[25.542s] INFO:colcon.colcon_core.shell:Creating package script '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/package.ps1'
+[25.544s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/package.dsv'
+[25.545s] INFO:colcon.colcon_core.shell:Creating package script '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/package.sh'
+[25.547s] INFO:colcon.colcon_core.shell:Creating package script '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/package.bash'
+[25.548s] INFO:colcon.colcon_core.shell:Creating package script '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/package.zsh'
+[25.549s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/colcon-core/packages/sllidar_ros2)
+[25.551s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sllidar_ros2)
+[25.552s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2' for CMake module files
+[25.554s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2' for CMake config files
+[25.555s] Level 1:colcon.colcon_core.shell:create_environment_hook('sllidar_ros2', 'cmake_prefix_path')
+[25.556s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.ps1'
+[25.557s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.dsv'
+[25.558s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.sh'
+[25.560s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2/lib'
+[25.561s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2/bin'
+[25.561s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2/lib/pkgconfig/sllidar_ros2.pc'
+[25.562s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2/lib/python3.10/site-packages'
+[25.562s] Level 1:colcon.colcon_core.environment:checking '/home/marlboro/ws_diff_drive/install/sllidar_ros2/bin'
+[25.563s] INFO:colcon.colcon_core.shell:Creating package script '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/package.ps1'
+[25.565s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/package.dsv'
+[25.567s] INFO:colcon.colcon_core.shell:Creating package script '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/package.sh'
+[25.569s] INFO:colcon.colcon_core.shell:Creating package script '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/package.bash'
+[25.571s] INFO:colcon.colcon_core.shell:Creating package script '/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/sllidar_ros2/package.zsh'
+[25.573s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/marlboro/ws_diff_drive/install/sllidar_ros2/share/colcon-core/packages/sllidar_ros2)
+[25.575s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[25.576s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[25.576s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[25.578s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[25.596s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[25.596s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[25.596s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[25.634s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[25.635s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/marlboro/ws_diff_drive/install/local_setup.ps1'
+[25.637s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/marlboro/ws_diff_drive/install/_local_setup_util_ps1.py'
+[25.640s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/marlboro/ws_diff_drive/install/setup.ps1'
+[25.642s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/marlboro/ws_diff_drive/install/local_setup.sh'
+[25.643s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/marlboro/ws_diff_drive/install/_local_setup_util_sh.py'
+[25.645s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/marlboro/ws_diff_drive/install/setup.sh'
+[25.649s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/marlboro/ws_diff_drive/install/local_setup.bash'
+[25.650s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/marlboro/ws_diff_drive/install/setup.bash'
+[25.653s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/marlboro/ws_diff_drive/install/local_setup.zsh'
+[25.655s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/marlboro/ws_diff_drive/install/setup.zsh'

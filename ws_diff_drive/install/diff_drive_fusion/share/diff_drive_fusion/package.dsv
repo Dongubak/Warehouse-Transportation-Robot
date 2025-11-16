@@ -1,0 +1,9 @@
+source;share/diff_drive_fusion/hook/pythonpath.ps1
+source;share/diff_drive_fusion/hook/pythonpath.dsv
+source;share/diff_drive_fusion/hook/pythonpath.sh
+source;share/diff_drive_fusion/hook/ament_prefix_path.ps1
+source;share/diff_drive_fusion/hook/ament_prefix_path.dsv
+source;share/diff_drive_fusion/hook/ament_prefix_path.sh
+source;../../build/diff_drive_fusion/share/diff_drive_fusion/hook/pythonpath_develop.ps1
+source;../../build/diff_drive_fusion/share/diff_drive_fusion/hook/pythonpath_develop.dsv
+source;../../build/diff_drive_fusion/share/diff_drive_fusion/hook/pythonpath_develop.sh

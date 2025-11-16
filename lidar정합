@@ -1,0 +1,201 @@
+좋아, 네가 쓰는 sllidar_ros2 + A1 런치에 맞춰서,
+휠 오도메트리(/odom) + LiDAR(/scan) + slam_toolbox를 한 번에 돌려서 RViz에서 map 좌표로 로봇 위치를 보게 만드는 전체 가이드를 깔끔하게 줄게. (도메인 0 기준)
+
+⸻
+
+0) 선행 조건 체크
+	•	/wheel/left/odometry, /wheel/right/odometry OK (이미 확인)
+	•	우리가 만든 융합 노드 diff_drive_fusion에서 /odom 퍼블리시 OK
+	•	LiDAR: sllidar_ros2 기준 /scan 나오게
+
+프레임 트리 목표: map → odom → base_link → laser
+
+⸻
+
+1) LiDAR 실행 (sllidar_ros2)
+
+네 런치 내용 반영해서 파라미터만 명시적으로 주는 버전:
+
+# LiDAR 포트 확인
+ls -l /dev/serial/by-id/
+
+# 실행(예: /dev/ttyUSB0, 115200, frame_id=laser)
+ros2 launch sllidar_ros2 view_sllidar_a1_launch.py \
+  serial_port:=/dev/ttyUSB0 \
+  serial_baudrate:=115200 \
+  frame_id:=laser \
+  inverted:=false \
+  angle_compensate:=true \
+  scan_mode:=Standard
+
+확인:
+
+ros2 topic list | grep scan
+# /scan 보이면 OK
+
+LiDAR가 뒤집혀 보이면 inverted:=true 또는 아래 static TF에서 yaw=3.14159 로 조정.
+
+⸻
+
+2) base_link ↔ laser 고정 TF 추가
+
+LiDAR의 실제 장착 위치/자세로 맞춰줘. 대략 값으로 먼저 시작:
+
+# x=0.12m 앞, z=0.10m 높이, yaw=0
+ros2 run tf2_ros static_transform_publisher \
+  0.12 0.0 0.10  0 0 0  base_link laser
+
+나중에 SLAM 상 지도가 비뚤면 여기 변환을 미세 조정. (특히 yaw)
+
+⸻
+
+3) slam_toolbox 파라미터 파일 작성
+
+~/ws_diff_drive/src/diff_drive_fusion/config/slam_toolbox.yaml (경로는 원하는 곳으로)
+
+slam_toolbox:
+  ros__parameters:
+    odom_frame: "odom"
+    map_frame: "map"
+    base_frame: "base_link"
+    scan_topic: "/scan"
+
+    mode: "mapping"              # 온라인 SLAM
+    resolution: 0.05
+    max_laser_range: 8.0
+    minimum_travel_distance: 0.10
+    minimum_travel_heading: 0.10
+    transform_publish_period: 0.02
+    map_update_interval: 1.0
+
+    use_scan_matching: true
+    use_scan_barycenter: false
+    use_loop_closure: true
+    do_loop_closing: true
+    loop_search_maximum_distance: 3.0
+
+    # 센서 타임스탬프가 불안하면 false 권장
+    use_scan_time: false
+
+
+⸻
+
+4) 한 방에 돌리는 Launch (LiDAR + TF + fusion + SLAM)
+
+~/ws_diff_drive/src/diff_drive_fusion/launch/lidar_slam.launch.py:
+
+from launch import LaunchDescription
+from launch_ros.actions import Node
+
+def generate_launch_description():
+
+    # 1) sllidar_ros2
+    lidar = Node(
+        package='sllidar_ros2',
+        executable='sllidar_node',
+        name='sllidar_node',
+        parameters=[{
+            'channel_type': 'serial',
+            'serial_port': '/dev/ttyUSB0',      # 필요 시 by-id 경로로 교체
+            'serial_baudrate': 115200,
+            'frame_id': 'laser',
+            'inverted': False,
+            'angle_compensate': True,
+            # 'scan_mode': 'Standard',          # 기본이면 생략 가능
+        }],
+        output='screen'
+    )
+
+    # 2) base_link -> laser 고정 TF
+    static_tf = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='lidar_tf',
+        # x y z roll pitch yaw parent child
+        arguments=['0.12', '0.0', '0.10', '0', '0', '0', 'base_link', 'laser'],
+        output='screen'
+    )
+
+    # 3) 휠 오도메 융합 노드 (이미 만든 Python 노드)
+    fusion = Node(
+        package='diff_drive_fusion',
+        executable='fusion_node',
+        name='diff_drive_fusion',
+        parameters=[{
+            'wheel_base': 0.28,
+            'odom_frame': 'odom',
+            'base_frame': 'base_link',
+            # 필요 시 부호/스케일 디버깅 파라미터:
+            # 'left_sign': 1.0,
+            # 'right_sign': 1.0,
+            # 'forward_sign': 1.0,
+            # 'yaw_sign': 1.0,
+            # 'v_scale': 1.0,
+        }],
+        output='screen'
+    )
+
+    # 4) slam_toolbox (sync 또는 async 중 택1 — sync가 무난)
+    slam = Node(
+        package='slam_toolbox',
+        executable='sync_slam_toolbox_node',
+        name='slam_toolbox',
+        parameters=['/home/{}/ws_diff_drive/src/diff_drive_fusion/config/slam_toolbox.yaml'.format(
+            os.getenv("USER", "ubuntu")
+        )],
+        output='screen'
+    )
+
+    return LaunchDescription([lidar, static_tf, fusion, slam])
+
+이 파일에서 os를 쓰면 import os가 필요하니, 파일 맨 위에 import os 추가해줘.
+
+빌드 & 실행:
+
+cd ~/ws_diff_drive
+colcon build --packages-select diff_drive_fusion
+source install/setup.bash
+export ROS_DOMAIN_ID=0
+
+ros2 launch diff_drive_fusion lidar_slam.launch.py
+
+
+⸻
+
+5) RViz 설정
+
+rviz2
+
+	•	Fixed Frame: map
+	•	Displays:
+	•	Map → Topic: /map
+	•	LaserScan → /scan
+	•	TF 체크
+	•	Odometry(옵션) → /odom
+
+로봇을 움직이면 맵이 그려지고, 로봇은 map 좌표에서 부드럽게 위치가 갱신돼야 함.
+(slam_toolbox가 map→odom TF를 퍼블리시해서 휠오도메 드리프트를 보정)
+
+⸻
+
+6) 맵 저장
+
+ros2 service call /slam_toolbox/save_map slam_toolbox/srv/SaveMap \
+  "{name: '/home/$USER/map', format: 'pgm'}"
+# /home/$USER/map.pgm, map.yaml 생성
+
+
+⸻
+
+트러블슈팅 팁
+	•	레이저가 뒤집혀 보임 → inverted:=true 또는 static TF yaw=3.14159
+	•	맵이 안 커짐 → 로봇이 충분히 이동/회전했는지 확인, minimum_travel_* 완화
+	•	프레임 이름 오류 → frame_id=laser, TF는 base_link→laser, slam 파라미터는 odom/base_link/map 일치
+	•	타임스탬프 0/지연 → use_scan_time: false 유지, micro-ROS는 rmw_uros_sync_session() 권장
+	•	자꾸 끊김 → LiDAR 전원 부족/케이블 문제, USB 포트 바꾸기, serial_baudrate 모델 확인(A2/A3는 256000)
+
+⸻
+
+원하면 네 LiDAR 실제 장착 위치(레이저 센서의 base_link 기준 x/y/z, yaw/pitch/roll) 알려주면
+static TF 값을 정확히 산정해서 다시 넣어줄게.
+또, URDF에 laser 링크를 추가해서 RobotModel로도 보이게 해줄 수 있어.

@@ -1,0 +1,28 @@
+[1.380s] Invoking command in '/home/marlboro/ws_diff_drive/build/diff_drive_fusion': PYTHONPATH=/home/marlboro/ws_diff_drive/build/diff_drive_fusion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marlboro/ws_diff_drive/install/diff_drive_fusion/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/marlboro/ws_diff_drive/build/diff_drive_fusion/build --no-deps symlink_data
+[1.938s] running develop
+[2.288s] running egg_info
+[2.288s] creating diff_drive_fusion.egg-info
+[2.289s] writing diff_drive_fusion.egg-info/PKG-INFO
+[2.289s] writing dependency_links to diff_drive_fusion.egg-info/dependency_links.txt
+[2.289s] writing entry points to diff_drive_fusion.egg-info/entry_points.txt
+[2.290s] writing requirements to diff_drive_fusion.egg-info/requires.txt
+[2.290s] writing top-level names to diff_drive_fusion.egg-info/top_level.txt
+[2.290s] writing manifest file 'diff_drive_fusion.egg-info/SOURCES.txt'
+[2.294s] reading manifest file 'diff_drive_fusion.egg-info/SOURCES.txt'
+[2.295s] writing manifest file 'diff_drive_fusion.egg-info/SOURCES.txt'
+[2.298s] running build_ext
+[2.299s] Creating /home/marlboro/ws_diff_drive/install/diff_drive_fusion/lib/python3.10/site-packages/diff-drive-fusion.egg-link (link to .)
+[2.300s] Installing fusion_node script to /home/marlboro/ws_diff_drive/install/diff_drive_fusion/lib/diff_drive_fusion
+[2.301s] 
+[2.301s] Installed /home/marlboro/ws_diff_drive/build/diff_drive_fusion
+[2.301s] running symlink_data
+[2.301s] creating /home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/ament_index
+[2.302s] creating /home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/ament_index/resource_index
+[2.302s] creating /home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/ament_index/resource_index/packages
+[2.302s] symbolically linking /home/marlboro/ws_diff_drive/build/diff_drive_fusion/resource/diff_drive_fusion -> /home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/ament_index/resource_index/packages
+[2.302s] symbolically linking /home/marlboro/ws_diff_drive/build/diff_drive_fusion/package.xml -> /home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion
+[2.302s] creating /home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/launch
+[2.302s] symbolically linking /home/marlboro/ws_diff_drive/build/diff_drive_fusion/launch/lidar_slam.launch.py -> /home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/launch
+[2.303s] creating /home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/config
+[2.303s] symbolically linking /home/marlboro/ws_diff_drive/build/diff_drive_fusion/config/slam_toolbox.yaml -> /home/marlboro/ws_diff_drive/install/diff_drive_fusion/share/diff_drive_fusion/config
+[2.387s] Invoked command in '/home/marlboro/ws_diff_drive/build/diff_drive_fusion' returned '0': PYTHONPATH=/home/marlboro/ws_diff_drive/build/diff_drive_fusion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marlboro/ws_diff_drive/install/diff_drive_fusion/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/marlboro/ws_diff_drive/build/diff_drive_fusion/build --no-deps symlink_data

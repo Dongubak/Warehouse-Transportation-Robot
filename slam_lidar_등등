@@ -1,0 +1,17 @@
+source install/setup.bash
+export ROS_DOMAIN_ID=0
+
+ros2 launch diff_drive_fusion lidar_slam.launch.py \
+  serial_port:=/dev/ttyUSB0 serial_baudrate:=115200 \
+  frame_id:=laser inverted:=false angle_compensate:=true scan_mode:=Standard \
+  laser_x:=0.0 laser_y:=0.0 laser_z:=0.30 laser_roll:=0 laser_pitch:=0 laser_yaw:=0
+
+
+⸻
+
+3) RViz 팁
+	•	Fixed Frame: map
+	•	표시: Map(/map), LaserScan(/scan), TF, Odometry(/odom)
+	•	레이저가 뒤집히거나 평행이동이 어색하면 laser_* 인자(yaw, x/y/z)만 조정해서 바로 재실행하면 돼.
+
+필요하면 URDF에 laser 링크까지 넣어서 RobotModel로도 보이게 세팅해줄게.
